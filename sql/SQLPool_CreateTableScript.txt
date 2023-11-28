@@ -1,0 +1,42 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE TABLE [pbis].[PBIMonitoring_AuditLog]
+( 
+	[RecordType] [varchar](4000)  NULL,
+	[CreationTime] [varchar](4000)  NULL,
+	[Operation] [varchar](4000)  NULL,
+	[OrganizationId] [varchar](4000)  NULL,
+	[UserType] [varchar](4000)  NULL,
+	[UserKey] [varchar](4000)  NULL,
+	[Workload] [varchar](4000)  NULL,
+	[UserId] [varchar](4000)  NULL,
+	[ClientIP] [varchar](4000)  NULL,
+	[Activity] [varchar](4000)  NULL,
+	[RequestId] [varchar](4000)  NULL,
+	[ItemName] [varchar](4000)  NULL,
+	[WorkSpaceName] [varchar](4000)  NULL,
+	[ReportId] [varchar](4000)  NULL,
+	[CapacityId] [varchar](4000)  NULL,
+	[CapacityName] [varchar](4000)  NULL,
+	[DataConnectivityMode] [varchar](4000)  NULL,
+	[ArtifactId] [varchar](4000)  NULL,
+	[ArtifactName] [varchar](4000)  NULL,
+	[LastRefreshTime] [varchar](4000)  NULL,
+	[ArtifactKind] [varchar](4000)  NULL,
+	[isRefreshable] [varchar](4000)  NULL,
+	[configuredBy] [varchar](4000)  NULL,
+	[sku] [varchar](4000)  NULL,
+	[state] [varchar](4000)  NULL,
+	[capacityUserAccessRight] [varchar](4000)  NULL,
+	[region] [varchar](4000)  NULL
+)
+WITH
+(
+	DISTRIBUTION = ROUND_ROBIN,
+	CLUSTERED COLUMNSTORE INDEX
+)
+GO
