@@ -69,3 +69,27 @@ Note : Please take care of code indentations – they might have moved and might
 ![FirstCode-A](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_a.png)
 
 ![FirstCode-B](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_b.png)
+
+![FirstCode-C](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_c.png)
+
+![FirstCode-D](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_d.png)
+
+![SecondCode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_SecondCode.png)
+
+![ThirdCode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_ThirdCode.png)
+
+![FourthCode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FourthCode.png)
+
+![FifthCode-A](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FifthCode_a.png)
+
+![FifthCode-B](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FifthCode_b.png)
+
+Our final data frame is result_df which has all the values we need for final reporting/analysis.
+The code can be scheduled to run on a trigger for the previous day’s activity log. Because of this, we have to append the data into a Synapse Dedicated SQL Pool (or any relational database of your choice)
+Use an existing Synapse Dedicated SQL Pool or create a small (DW100) one 
+Run the create table script found [HERE]([url]([https://github.com/ujvalgandhi1/PBIActivityEvents/tree/main/pythoncode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/sql/SQLPool_CreateTableScript.txt))) 
+in your pool to get a table of your choice.
+Once you get your table created, you have to incorporate the final Spark Code that takes the Spark Dataframe (result_df) and appends the data to the SQL Pool table
+
+![SixthCode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_SixthCode.png)
+
