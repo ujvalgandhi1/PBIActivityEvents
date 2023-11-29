@@ -61,7 +61,7 @@ The notional architecture outlined above uses a Synapse Analytics Spark Notebook
 **Spark Notebook**
 Navigate to the Notebooks under your Synapse Notebook and select an existing Spark Pool (or provision a new Spark Pool) and use PySpark as your language
 Give a name to your Spark Notebook and click “Publish All” to commit your changes
-The code modules are all available [HERE]([url](https://github.com/ujvalgandhi1/PBIActivityEvents/tree/main/pythoncode))
+The code modules are all available https://github.com/ujvalgandhi1/PBIActivityEvents/tree/main/pythoncode
 The entire end to end code is available for download HERE
 The entire code is represented in code snippets via screenshots here in case you want to follow along step by step. 
 Note : Please take care of code indentations – they might have moved and might introduce errors. 
@@ -87,7 +87,7 @@ Note : Please take care of code indentations – they might have moved and might
 Our final data frame is result_df which has all the values we need for final reporting/analysis.
 The code can be scheduled to run on a trigger for the previous day’s activity log. Because of this, we have to append the data into a Synapse Dedicated SQL Pool (or any relational database of your choice)
 Use an existing Synapse Dedicated SQL Pool or create a small (DW100) one 
-Run the create table script found [Create Table Script]([url]([https://github.com/ujvalgandhi1/PBIActivityEvents/tree/main/pythoncode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/sql/SQLPool_CreateTableScript.txt))) 
+Run the create table script found at https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/sql/SQLPool_CreateTableScript.txt
 in your pool to get a table of your choice.
 Once you get your table created, you have to incorporate the final Spark Code that takes the Spark Dataframe (result_df) and appends the data to the SQL Pool table
 
