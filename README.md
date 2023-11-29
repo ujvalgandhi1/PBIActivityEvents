@@ -40,3 +40,28 @@ https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-prin
 
 https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal#step-4---add-the-service-principal-to-your-workspace
 These two steps will allow the new App Registration to access the PowerBI APIs via the REST call. 
+
+**Azure Key Vault **
+Use an existing Key Vault or create a new one – this is required so that you don’t have the client secret (created earlier) in open format in your Spark Notebook.
+To add a secret to the vault, follow the steps:
+1.	Navigate to your new key vault in the Azure portal
+2.	On the Key Vault settings pages, select Secrets.
+3.	Select on Generate/Import.
+4.	On the Create a secret screen choose the following values:
+•	Upload options: Manual.
+•	Name: Type a name for the secret. The secret name must be unique within a Key Vault. The name must be a 1-127 character string, starting with a letter and containing only 0-9, a-z, A-Z, and -. 
+•	Value: Type the value for the secret. This is the value you saved from the earlier step when you created the App Registration and got a secret value.
+•	Leave the other values to their defaults. Select Create.
+
+**Azure Synapse Analytics**
+Once you have the first two parts done, we are ready to move to Synapse Analytics (or Fabric)
+The notional architecture outlined above uses a Synapse Analytics Spark Notebook with a Dedicated SQL Pool to hold the data. This can be modified to have a Fabric notebook with a Managed Table/Datawarehouse table with some code modifications
+
+ 
+**Spark Notebook**
+Navigate to the Notebooks under your Synapse Notebook and select an existing Spark Pool (or provision a new Spark Pool) and use PySpark as your language
+Give a name to your Spark Notebook and click “Publish All” to commit your changes
+The code modules are all available [HERE]([url](https://github.com/ujvalgandhi1/PBIActivityEvents/tree/main/pythoncode))
+The entire end to end code is available for download HERE
+The entire code is represented in code snippets via screenshots here in case you want to follow along step by step. 
+Note : Please take care of code indentations – they might have moved and might introduce errors. 
