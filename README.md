@@ -102,3 +102,4 @@ The Stored Procedure script can be found at https://github.com/ujvalgandhi1/PBIA
 Once you have all the individual components in place, we can encapsulate the Spark Notebook and the Stored Procedure in a Synapse Pipeline. This pipeline can be triggered on a daily schedule.
 ![Synapse Pipeline](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/5_SynapsePipeline.png)
 
+Now that the pipeline is set to be running, we can connect the data from the SQL Pool to a PowerBI Dashboard and produce a report that outlines all the key activities 
