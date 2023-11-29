@@ -13,7 +13,7 @@ b.	Synapse Dedicated SQL Pool (or Fabric Managed Table/Datawarehouse table) You 
 2.	Azure Key Vault {Slight modification in code if you are using Fabric}
 3.	PowerBI 
 
-![Notional Architecture]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/PBIRESTNotionalArchitecture.jpg)?raw=true)
+![Notional Architecture](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/PBIRESTNotionalArchitecture.jpg)?raw=true)
 
  
 Set up components (if you are using Synapse Analytics)
