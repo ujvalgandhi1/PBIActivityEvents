@@ -16,19 +16,24 @@ b.	Synapse Dedicated SQL Pool (or Fabric Managed Table/Datawarehouse table) You 
 ![Notional Architecture](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/PBIRESTNotionalArchitecture.jpg)?raw=true)
 
  
-Set up components (if you are using Synapse Analytics)
-Note : You are going to need admin permissions (or request an admin) to do some of the set up components
-PowerBI REST API set up
+**Set up components (if you are using Synapse Analytics)
+Note : You are going to need admin permissions (or request an admin) to do some of the set up components**
+
+**PowerBI REST API set up**
 We are using an App Registration for access to the PowerBI REST API
 Use Entra to create a new App Registration. Fill in the details as per your specifications
- 
+![Entra App Registration](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/0_AppRegistration.png?raw=true)
  
 Once you have created the App Registration, navigate to the “Certificates and Secrets” section and create a new client secret
-Note : Keep the value (it is client secret) and the client id in a secure place. Once the screen displays the value, it will not display it again in case you navigate away. If that happens, you have to delete this secret and create a new one. 
- 
+**Note : Keep the value (it is client secret) and the client id in a secure place. Once the screen displays the value, it will not display it again in case you navigate away. If that happens, you have to delete this secret and create a new one. **
+![Entra App Registration](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/1_AppRegistration.png?raw=true)
+
 Once you have the secret created, we have to add some API Permissions (This might need a PowerBI admin)
- 
- 
+![Entra App Registration](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_AppRegistration.png?raw=true)
+
+![Entra App Registration](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/3_AppRegistration.png?raw=true)
+
+![Entra App Registration](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/4_AppRegistration.png?raw=true)
  
 Once you have this piece ready (and potentially added the App Registration to an Entra Group), have your PowerBI Admin follow these steps
 https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings
