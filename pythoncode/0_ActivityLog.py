@@ -52,7 +52,9 @@ if 'access_token' in result:
     
 
     #Specify empty Dataframe with all columns
-    column_names = ['Id', 'RecordType', 'CreationTime', 'Operation', 'OrganizationId', 'UserType', 'UserKey', 'Workload', 'UserId', 'ClientIP', 'UserAgent', 'Activity', 'IsSuccess', 'RequestId', 'ActivityId', 'ItemName', 'WorkSpaceName', 'DatasetName', 'ReportName', 'WorkspaceId', 'ObjectId', 'DatasetId', 'ReportId', 'ReportType', 
+    column_names = ['Id', 'RecordType', 'CreationTime', 'Operation', 'OrganizationId', 'UserType', 'UserKey', 'Workload', 'UserId', 
+                    'ClientIP', 'UserAgent', 'Activity', 'IsSuccess', 'RequestId', 'ActivityId', 'ItemName', 'WorkSpaceName', 
+                    'DatasetName', 'ReportName', 'WorkspaceId', 'ObjectId', 'DatasetId', 'ReportId', 'ReportType', 
                     'DistributionMethod', 'ConsumptionMethod']
     df = pd.DataFrame(columns=column_names)
 
@@ -77,8 +79,6 @@ if 'access_token' in result:
     df = df.set_index('Id')
 
 df = df.astype(str)
-
-print(df.columns)
 
 spark = SparkSession.builder.appName("example").getOrCreate()
 pd.DataFrame.iteritems = pd.DataFrame.items
