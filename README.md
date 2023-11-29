@@ -65,3 +65,7 @@ The code modules are all available [HERE]([url](https://github.com/ujvalgandhi1/
 The entire end to end code is available for download HERE
 The entire code is represented in code snippets via screenshots here in case you want to follow along step by step. 
 Note : Please take care of code indentations – they might have moved and might introduce errors. 
+
+![FirstCode-A](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_a.png)
+
+![FirstCode-B](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_FirstCode_b.png)
