@@ -6,13 +6,14 @@ Discover how this integration not only empowers you to monitor user interactions
 This will guide you through the process of connecting Spark to the PowerBI REST API, retrieving detailed activity logs, and transforming the data into actionable insights. Buckle up for a journey into the world of real-time analytics and data-driven decision-making.
 Ready to supercharge your PowerBI monitoring? Let's dive in!
 
-Set up
+**Set up**
 1.	Azure Synapse Analytics (Or Fabric Data Science)
 a.	Spark Notebook
 b.	Synapse Dedicated SQL Pool (or Fabric Managed Table/Datawarehouse table) You can write the data out to any relational database using some code modifications}
 2.	Azure Key Vault {Slight modification in code if you are using Fabric}
 3.	PowerBI 
- 
+
+![Notional Architecture]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/PBIRESTNotionalArchitecture.jpg)?raw=true)
 
  
 Set up components (if you are using Synapse Analytics)
