@@ -93,3 +93,12 @@ Once you get your table created, you have to incorporate the final Spark Code th
 
 ![SixthCode](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/2_SixthCode.png)
 
+**Synapse Dedicated SQL Pool Stored Procedure**
+Since the Spark job appends data, there is a need to run a script that will check for and remove duplicate records if inserted. We will be using a Stored Procedure on the Pool itself but this can be easily modified to run on any relational database of your choice. 
+Note : if you are using Fabric, it might make sense to extend the Spark Notebook to have another code module that does the delete of duplicate records from the Managed Table
+The Stored Procedure script can be found at https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/sql/SQLPool_StoredProcedureRemoveDuplicates.txt
+
+**Synapse Pipeline**
+Once you have all the individual components in place, we can encapsulate the Spark Notebook and the Stored Procedure in a Synapse Pipeline. This pipeline can be triggered on a daily schedule.
+![Synapse Pipeline](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/5_SynapsePipeline.png)
+
