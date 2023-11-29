@@ -41,7 +41,7 @@ https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-prin
 https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal#step-4---add-the-service-principal-to-your-workspace
 These two steps will allow the new App Registration to access the PowerBI APIs via the REST call. 
 
-**Azure Key Vault **
+**Azure Key Vault**
 Use an existing Key Vault or create a new one – this is required so that you don’t have the client secret (created earlier) in open format in your Spark Notebook.
 To add a secret to the vault, follow the steps:
 1.	Navigate to your new key vault in the Azure portal
