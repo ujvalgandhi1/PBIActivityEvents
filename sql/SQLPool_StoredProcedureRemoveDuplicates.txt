@@ -1,0 +1,107 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [pbis].[RemoveDuplicates_AuditLog] AS
+BEGIN
+    -- Enable the usage of variables
+    SET NOCOUNT ON;
+
+    -- Create a temporary table with the unique rows
+    WITH UniqueRows AS (
+        SELECT
+            [RecordType]
+            ,[CreationTime]
+            ,[Operation]
+            ,[OrganizationId]
+            ,[UserType]
+            ,[UserKey]
+            ,[Workload]
+            ,[UserId]
+            ,[ClientIP]
+            ,[Activity]
+            ,[RequestId]
+            ,[ItemName]
+            ,[WorkSpaceName]
+            ,[ReportId]
+            ,[CapacityId]
+            ,[capacityName]
+            ,[DataConnectivityMode]
+            ,[ArtifactId]
+            ,[ArtifactName]
+            ,[LastRefreshTime]
+            ,[ArtifactKind]
+            ,[isRefreshable]
+            ,[configuredBy]
+            ,[sku]
+            ,[state]
+            ,[capacityUserAccessRight]
+            ,[region]
+            ,ROW_NUMBER() OVER (PARTITION BY 
+                                            [RecordType]
+                                            ,[CreationTime]
+                                            ,[Operation]
+                                            ,[OrganizationId]
+                                            ,[UserType]
+                                            ,[UserKey]
+                                            ,[Workload]
+                                            ,[UserId]
+                                            ,[ClientIP]
+                                            ,[Activity]
+                                            ,[RequestId]
+                                            ,[ItemName]
+                                            ,[WorkSpaceName]
+                                            ,[ReportId]
+                                            ,[CapacityId]
+                                            ,[capacityName]
+                                            ,[DataConnectivityMode]
+                                            ,[ArtifactId]
+                                            ,[ArtifactName]
+                                            ,[LastRefreshTime]
+                                            ,[ArtifactKind]
+                                            ,[isRefreshable]
+                                            ,[configuredBy]
+                                            ,[sku]
+                                            ,[state]
+                                            ,[capacityUserAccessRight]
+                                            ,[region]           
+            ORDER BY (SELECT NULL)) AS RowNum
+        FROM
+            [pbis].[PBIMonitoring_AuditLog]
+    )
+    -- Delete duplicates from the original table
+    DELETE FROM [pbis].[PBIMonitoring_AuditLog]
+    FROM [pbis].[PBIMonitoring_AuditLog]
+    JOIN UniqueRows ON [pbis].[PBIMonitoring_AuditLog].RecordType = UniqueRows.RecordType AND
+		       [pbis].[PBIMonitoring_AuditLog].CreationTime = UniqueRows.CreationTime AND
+		       [pbis].[PBIMonitoring_AuditLog].Operation = UniqueRows.Operation AND
+[pbis].[PBIMonitoring_AuditLog].OrganizationId = UniqueRows.OrganizationId AND
+[pbis].[PBIMonitoring_AuditLog].UserType = UniqueRows.UserType AND
+[pbis].[PBIMonitoring_AuditLog].UserKey = UniqueRows.UserKey AND
+[pbis].[PBIMonitoring_AuditLog].Workload = UniqueRows.Workload AND
+[pbis].[PBIMonitoring_AuditLog].UserId = UniqueRows.UserId AND
+[pbis].[PBIMonitoring_AuditLog].ClientIP = UniqueRows.ClientIP AND
+[pbis].[PBIMonitoring_AuditLog].Activity = UniqueRows.Activity AND
+[pbis].[PBIMonitoring_AuditLog].RequestId = UniqueRows.RequestId AND
+[pbis].[PBIMonitoring_AuditLog].ItemName = UniqueRows.ItemName AND
+[pbis].[PBIMonitoring_AuditLog].WorkSpaceName = UniqueRows.WorkSpaceName AND
+[pbis].[PBIMonitoring_AuditLog].CapacityId = UniqueRows.CapacityId AND
+[pbis].[PBIMonitoring_AuditLog].capacityName = UniqueRows.capacityName AND
+[pbis].[PBIMonitoring_AuditLog].DataConnectivityMode = UniqueRows.DataConnectivityMode AND
+[pbis].[PBIMonitoring_AuditLog].ArtifactId = UniqueRows.ArtifactId AND
+[pbis].[PBIMonitoring_AuditLog].ArtifactName = UniqueRows.ArtifactName AND
+[pbis].[PBIMonitoring_AuditLog].LastRefreshTime = UniqueRows.LastRefreshTime AND
+[pbis].[PBIMonitoring_AuditLog].ArtifactKind = UniqueRows.ArtifactKind AND
+[pbis].[PBIMonitoring_AuditLog].isRefreshable = UniqueRows.isRefreshable AND
+[pbis].[PBIMonitoring_AuditLog].configuredBy = UniqueRows.configuredBy AND
+[pbis].[PBIMonitoring_AuditLog].sku = UniqueRows.sku AND
+[pbis].[PBIMonitoring_AuditLog].state = UniqueRows.state AND
+[pbis].[PBIMonitoring_AuditLog].capacityUserAccessRight = UniqueRows.capacityUserAccessRight AND
+[pbis].[PBIMonitoring_AuditLog].region = UniqueRows.region
+
+    WHERE UniqueRows.RowNum > 1;
+
+
+END;
+GO
