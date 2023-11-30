@@ -1,5 +1,5 @@
-# PBIActivityEvents
-Using Spark to track PowerBI Activity Events
+# PBI Activity Events
+**Using Spark to track PowerBI Activity Events**
 Have you ever wondered what goes on behind the scenes when users interact with your PowerBI reports? The PowerBI REST API opens a door to a wealth of activity data that can be harnessed to gain insights into user behavior and system performance.
 In this blog post, we'll explore the exciting possibilities of using Apache Spark to tap into the PowerBI REST API, enabling you to track and analyze activity events seamlessly. By the end, you'll be equipped to create a comprehensive PowerBI dashboard that gives you a real-time pulse on your PowerBI environment.
 Discover how this integration not only empowers you to monitor user interactions but also opens avenues for optimizing report performance, ensuring data security, and making informed decisions for your PowerBI deployment.
@@ -103,3 +103,7 @@ Once you have all the individual components in place, we can encapsulate the Spa
 ![Synapse Pipeline](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/5_SynapsePipeline.png)
 
 Now that the pipeline is set to be running, we can connect the data from the SQL Pool to a PowerBI Dashboard and produce a report that outlines all the key activities 
+
+**PowerBI Report**
+Once the data is ready, you can build a simple PowerBI report to visualize the data
+![PowerBI Report](https://github.com/ujvalgandhi1/PBIActivityEvents/blob/main/images/PBI%20Audit%20Log.jpg)
